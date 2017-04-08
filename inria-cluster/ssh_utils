@@ -1,0 +1,15 @@
+# Upload file or folder
+rsync -avH /home/yolanda/find_similar_videos.py  -e ssh yolanda@nef-frontal.inria.fr:~/adv_generation/
+
+# Download file or folder
+
+
+oarsub -t besteffort -l /nodes=1,walltime=30 -S ./script.sh
+oarsub -t besteffort -p "gpucapability = '5.2'" -l /nodes=1,walltime=10 -S ./script.sh
+oarsub -t besteffort -p "gpucapability = '5.2'" -l /gpunum=1,walltime=10 -S ./scrip.sh
+
+# Monitor performances showing general and CPU usage
+tmux new-session -d 'htop' \; split-window -d 'watch -n1 "nvidia-settings -q GPUUtilization -q useddedicatedgpumemory"' \; attach
+
+# Watch file state
+rsync -av gdebard@zeus.i3s.unice.fr:~/generation.out ~/ > /dev/null 2>&1 && cat generation.out && rm generation.out && echo -e '\n'

@@ -17,6 +17,6 @@ pip3 install --upgrade --user $TF_BINARY_URL
 # export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.0.1-cp35-cp35m-linux_x86_64.whl
 # pip3 install --user $TF_BINARY_URL
 
-cd /home/gdebard/tests
+cd /home/yolanda/
 export PYTHONPATH=.
-python3 ae_test.py
+python3 find_similar_videos.py
