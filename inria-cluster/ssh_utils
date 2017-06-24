@@ -12,4 +12,4 @@ oarsub -t besteffort -p "gpucapability = '5.2'" -l /gpunum=1,walltime=10 -S ./sc
 tmux new-session -d 'htop' \; split-window -d 'watch -n1 "nvidia-settings -q GPUUtilization -q useddedicatedgpumemory"' \; attach
 
 # Watch file state
-rsync -av gdebard@zeus.i3s.unice.fr:~/generation.out ~/ > /dev/null 2>&1 && cat generation.out && rm generation.out && echo -e '\n'
+rsync -av yolanda@nef-frontal.inria.fr:~/generation.out ~/ > /dev/null 2>&1 && cat generation.out && rm generation.out && echo -e '\n'
